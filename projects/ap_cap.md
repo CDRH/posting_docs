@@ -1,5 +1,5 @@
 ---
-title: Project Posting
+title: Contemporary African Poets
 layout: page
 project: ap_cap
 es: true

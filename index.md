@@ -1,22 +1,32 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 ---
 
 <link rel="stylesheet" href="/assets/css/style.css"/>
 
-Click on a project to begin:
+<p>Welcome to the posting instructions for the CDRH. TODO learn more about how the publishing system is set up.</p>
+
+<h2>Projects</h2>
+
+<h3>African Poetics</h3>
 
 <div class="projects">
-  {% for project in site.data.projects %}
-    <a href="/projects/{{project[0]}}" class="project">
-      {{ project[1].name }}
-    </a>
-  {% endfor %}
+  <a href="/projects/ap_cap" class="project">Contemporary African Poets (yes docs)</a>
+  <a href="/projects/ap_news" class="project">African Poetics in the News (no docs)</a>)
 </div>
 
-TODO link to datura documentation
+<h3>Whitman</h3>
 
-does this work?
+<h4>Current (legacy) website</h4>
+<div class="projects">
+  <span class="project">Journalism</span>
+  <span class="project">Marginalia</span>
+  <span class="project">Multimedia</span>
+</div>
+
+<h4>FUTURE website</h4>
+<div class="projects">
+  <span class="project">Journalism</span>
+  <span class="project">Marginalia</span>
+  <span class="project">Multimedia</span>
+</div>

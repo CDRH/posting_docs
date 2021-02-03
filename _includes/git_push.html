@@ -1,0 +1,27 @@
+{% comment %}
+  Requires "environment" variable
+{% endcomment %}
+
+<p>After you've run your script, check if there are any files that have changed which you should commit.</p>
+
+{% highlight bash %}
+git status
+{% endhighlight %}
+
+{% if include.environment == "development" %}
+  <p>In general, files generated for the development environment will not need to be committed, so do not be surprised if there isn't anything here!</p>
+{% endif %}
+
+<p>If there are expected changes, such as to output/{{ include.environment }}/html, or for project-specific features, you will need to commit them.</p>
+
+{% highlight bash %}
+# you may run git add repeatedly to add different directories and files
+git add [filename] [filename]
+
+# check it over to make sure you're adding everything you need
+git status
+
+git commit -m "message about your changes"
+
+git push origin [current branch name]
+{% endhighlight %}

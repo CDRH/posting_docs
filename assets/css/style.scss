@@ -17,6 +17,18 @@
 /* instruction pages */
 ///////////////////////
 
+.head-instruct ~ h3 {
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.head-instruct-dev ~ h3 {
+  background-color: aquamarine;
+}
+.head-instruct-prod ~ h3 {
+  background-color: orange;
+}
+
 .more_info {
   background-color: lightgray;
   border-radius: 20px;

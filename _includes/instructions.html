@@ -1,44 +1,42 @@
 <h2>Jump to section</h2>
-<ul>
-  <li><a href="#development_data">Update the development site's data</a>
-    <ul>
-      <li><a href="#login_dev">Log in and pull to development</a></li>
-      <li><a href="#update_dev">Update the development site</a></li>
-    </ul>
-  </li>
-  <li><a href="#data_production">Update the production site's data</a></li>
-    <ul>
-      <li><a href="">Log in and pull to production</a></li>
-    </ul>
-  </ul>
-</ul>
+<div class="toc">
+  {% include toc.html %}
+</div>
 
 <!-- =========== -->
 <!-- DEVELOPMENT -->
 <!-- =========== -->
 
-<h2>Update Development</h2>
+<h2 class="head-instruct head-instruct-dev">Update Development</h2>
 
-<h3 id="login_dev">Log in and pull to development</h3>
+<h3 id="dev_login">Log in and pull to development</h3>
 {% include git_pull.html environment="development" %}
 
-<h3>Update the development site</h3>
+<h3 id="dev_update">Update the development site</h3>
 
-<h3>Check the site</h3>
+<h3 id="dev_check">Check the site</h3>
+{% include check_site.html environment="development" %}
 
-<h3>Push changes (if needed)</h3>
+<h3 id="dev_push">Push changes (if needed)</h3>
+{% include git_push.html environment="development" %}
 
 <!-- ========== -->
 <!-- PRODUCTION -->
 <!-- ========== -->
 
-<h2>Update Production</h2>
+<h2 class="head-instruct head-instruct-prod">Update Production</h2>
+{% include git_pull.html environment="production" %}
 
-<h3>Login in and pull to production</h3>
+<h3 id="prod_login">Log in and pull to production</h3>
+{% include git_pull.html environment="production" %}
 
-<h3>Update the production site</h3>
+<h3 id="prod_update">Update the production site</h3>
 
-<h3>
+<h3 id="prod_check">Check the site</h3>
+{% include check_site.html environment="production" %}
+
+<h3 id="prod_push">Push changes (if needed)</h3>
+{% include git_push.html environment="production" %}
 
 <!-- TODO add override for custom info for projects since multiple will need this -->
 

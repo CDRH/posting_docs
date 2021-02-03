@@ -1,0 +1,36 @@
+{% comment %}
+  Requires "environment" variable
+{% endcomment %}
+
+{% if page.cocoon %}
+  <p>This site is built in cocoon, which means that you will need to do one more thing before you can see your changes!</p>
+
+  <p>You are going to need to <strong>BREAK THE SITE</strong>.</p>
+
+  <p>This sounds scary but I promise you that it almost always, usually, well, probably is not. We need to break the site so that Cocoon will refresh its contents. We do this by introducing an intentional error in some XSLT.</p>
+
+  {% highlight bash %}
+  cd /var/local/www/cocoon/TODO
+  mv TODO
+  {% endhighlight %}
+
+  <p>Now, go to TODO BASED ON ENVIRONMENT and hard refresh the page. It should be broken!  That's a good thing. Now let's unbreak it.</p>
+
+  {% highlight bash %}
+  mv TODO
+  {% endhighlight %}
+
+  <p>Go back to TODO and refresh again. Hopefully it is unbroken and your changes are now available! [More info: <a href="#more_cocoon_broken">what if it's still broken?</a>]</p>
+
+{% else %}
+
+  <p>Go to TODO. Your changes should already be showing up there, although you may need to hard refresh to see them. [More info: <a href="#more_refresh">what is a hard refresh?</a>]</p>
+
+  <p>Make sure that you check not only the search results but an individual item page to make sure everything is shipshape.</p>
+
+  {% if include.environment == "production" %}
+    <p>Don't close this page yet! You're not quite done!</p>
+  {% endif %}
+
+{% endif %}
+
