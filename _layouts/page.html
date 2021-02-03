@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="/assets/css/style.css"/>
+
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+    {% if page.hide_instructions != true %}
+      {% include instructions.html %}
+    {% endif %}
+  </div>
+
+</article>

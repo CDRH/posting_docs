@@ -1,0 +1,26 @@
+<p>SSH into the {{ include.environment }} server and navigate to the data repository. [More info: <a href="#more_ssh">if this is your first time logging in, you will need to set up server access</a>.]</p>
+
+{% highlight bash %}
+ssh username@dev-server.unl.edu
+
+www
+cd data/collections/{{ page.project }}
+{% endhighlight %}
+
+<p>Check the status of the project's version control. You will want to take note of the <strong>branch name</strong> and also of any unexpected changes.</p>
+
+<p>Typically, you should be on the dev or main branch. [More info: <a href="#more_git_branch">What to do if it is on a different branch</a>.]</p>
+
+{% highlight bash %}
+git status
+{% endhighlight %}
+
+<p>If you're on the desired branch, there are no outstanding changes, and git looks happy, then you can pull updates. [More info: <a href="#more_git_changes">There are files changed on the server</a>.]</p>
+
+{% highlight bash %}
+git pull origin [current branch name]
+{% endhighlight %}
+
+<p>You should either get a message saying "Already up to date" or you should see a bunch of new files show up with no errors. [More info: <a href="#more_git_problems">What if there is a problem when I git pull?</a>]</p>
+
+<p>Now you should be ready to begin updating the website!</p>
