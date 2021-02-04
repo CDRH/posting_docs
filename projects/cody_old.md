@@ -1,11 +1,18 @@
 ---
 title: Cody Archive
 layout: page
-data_dir: cody_archive
+
+shortname: cody_archive
+
+data: "https://github.com/CDRH/data_cody"
+code: "https://github.com/CDRH/cocoon_cody"
+url_dev: "https://cdrhdev1.unl.edu/cocoon/codyarchive.org/"
+url_prod: "https://codyarchive.org"
 
 app: cocoon
 search: solr
 html: false
+
 
 ---
 

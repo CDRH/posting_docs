@@ -1,9 +1,16 @@
 ---
 ---
 
-///////////////////////
-/*     home page     */
-///////////////////////
+///////////////////////////
+/* home and project page */
+///////////////////////////
+
+.projects {
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
 
 .project {
   background-color: lightgray;
@@ -17,18 +24,26 @@
 /* instruction pages */
 ///////////////////////
 
-.about_project span {
-  border-radius: 10px;
-  color: white;
-  padding: 5px 10px;
-  &.app {
-    background-color: blue;
-  }
-  &.search {
-    background-color: purple;
-  }
-  &.html {
-    background-color: green;
+.about_project {
+  margin-bottom: 20px;
+}
+
+.about_project .tech {
+  margin-bottom: 20px;
+
+  span {
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    &.app {
+      background-color: blue;
+    }
+    &.search {
+      background-color: purple;
+    }
+    &.html {
+      background-color: green;
+    }
   }
 }
 
@@ -42,6 +57,13 @@
 }
 .head-instruct-prod ~ h3 {
   background-color: orange;
+}
+
+h4 {
+  border: 2px;
+  border-style: dotted;
+  display: inline-block;
+  padding: 0 5px;
 }
 
 .more_info {

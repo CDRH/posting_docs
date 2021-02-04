@@ -2,6 +2,8 @@
   Requires "environment" variable
 {% endcomment %}
 
+<h4>Part 1: Check changes</h4>
+
 <p>After you've run your script, check if there are any files that have changed which you should commit.</p>
 
 {% highlight bash %}
@@ -11,6 +13,8 @@ git status
 {% if include.environment == "development" %}
   <p>In general, files generated for the development environment will not need to be committed, so do not be surprised if there isn't anything here!</p>
 {% endif %}
+
+<h4>Part 2: Commit and push</h4>
 
 <p>If there are expected changes, such as to output/{{ include.environment }}/html, or for project-specific features, you will need to commit them.</p>
 

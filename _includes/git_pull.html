@@ -2,6 +2,8 @@
   Requires "environment" variable
 {% endcomment %}
 
+<h4>Step 1: Log in</h4>
+
 <p>SSH into the {{ include.environment }} server and navigate to the data repository. [More info: <a href="#more_ssh">if this is your first time logging in, you will need to set up server access</a>.]</p>
 
 {% highlight bash %}
@@ -9,6 +11,8 @@ ssh username@dev-server.unl.edu
 
 cd /var/local/www/data/collections/{{ page.data_dir }}
 {% endhighlight %}
+
+<h4>Step 2: Check for changes</h4>
 
 <p>Check to see which branch is currently checked out and see if there are any unexpected changes.</p>
 
@@ -19,6 +23,8 @@ git status
 <p>Typically, you should be on the dev or main branch. [More info: <a href="#more_git_branch">What to do if it is on a different branch</a>.]</p>
 
 <p>If you're on your desired branch, but there are outstanding changes, you will need to deal with them before you pull. [More info: <a href="#more_git_changes">There are files changed on the server</a>.]</p>
+
+<h4>Step 3: Pull!</h4>
 
 <p>Once you are on the correct branch, there are no outstanding changes, and everything is copacetic, then you can pull updates. </p>
 

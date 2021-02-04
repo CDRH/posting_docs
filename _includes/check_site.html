@@ -2,7 +2,7 @@
   Requires "environment" variable
 {% endcomment %}
 
-{% if page.cocoon %}
+{% if page.app == "cocoon" %}
   <p>This site is built in cocoon, which means that you will need to do one more thing before you can see your changes!</p>
 
   <p>You are going to need to <strong>BREAK THE SITE</strong>.</p>
@@ -24,7 +24,14 @@
 
 {% else %}
 
-  <p>Go to TODO. Your changes should already be showing up there, although you may need to hard refresh to see them. [More info: <a href="#more_refresh">what is a hard refresh?</a>]</p>
+  <p>Go to
+    {% if include.environment == "development" %}
+      {{ page.url_dev }}
+    {% else %}
+      {{ page.url_prod }}
+    {% endif %}
+    . Your changes should already be showing up there, although you may need to hard refresh to see them. [More info: <a href="#more_refresh">what is a hard refresh?</a>]</p>
+    }
 
   <p>Make sure that you check not only the search results but an individual item page to make sure everything is shipshape.</p>
 
