@@ -18,9 +18,18 @@
 ///////////////////////
 
 .about_project span {
-  background-color: yellow;
   border-radius: 10px;
+  color: white;
   padding: 5px 10px;
+  &.app {
+    background-color: blue;
+  }
+  &.search {
+    background-color: purple;
+  }
+  &.html {
+    background-color: green;
+  }
 }
 
 .head-instruct ~ h3 {

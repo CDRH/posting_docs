@@ -1,5 +1,11 @@
 <div class="about_project">
-  <span>Application: {{ page.app }}</span>
-  <span>Search: {{ page.search }}</span>
-  <span>HTML generation: {{ page.html }}</span>
+  <span class="app">{{ page.app }}</span>
+  <span class="search">{{ page.search }}</span>
+  <span class="html">
+    {% if page.html %}
+      Pregenerated HTML
+    {% else %}
+      No pregen HTML
+    {% endif %}
+  </span>
 </div>
