@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<link rel="stylesheet" href="/assets/css/style.css"/>
+<link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}"/>
 
 <p>Welcome to the posting instructions for the CDRH. TODO learn more about how the publishing system is set up.</p>
 
