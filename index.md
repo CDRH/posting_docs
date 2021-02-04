@@ -12,7 +12,14 @@ layout: home
 
 <div class="projects">
   <a href="/projects/ap_cap" class="project">Contemporary African Poets (yes docs)</a>
-  <a href="/projects/ap_news" class="project">African Poetics in the News (no docs)</a>)
+  <a href="/projects/ap_news" class="project">African Poetics in the News (no docs)</a>
+</div>
+
+<h3>Uncategorized</h3>
+
+<div class="projects">
+  <a href="/projects/cody_old" class="project">Cody (Old Site)</a>
+  <a href="/projects/cody" class="project">Cody (Future Site)</a>
 </div>
 
 <h3>Whitman</h3>

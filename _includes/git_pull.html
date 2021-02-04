@@ -7,8 +7,7 @@
 {% highlight bash %}
 ssh username@dev-server.unl.edu
 
-www
-cd data/collections/{{ page.project }}
+cd /var/local/www/data/collections/{{ page.data_dir }}
 {% endhighlight %}
 
 <p>Check to see which branch is currently checked out and see if there are any unexpected changes.</p>

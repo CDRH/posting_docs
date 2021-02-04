@@ -10,7 +10,10 @@ layout: default
   </header>
 
   <div class="post-content">
+    {% include about_project.html %}
+
     {{ content }}
+
     {% if page.hide_instructions != true %}
       {% include instructions.html %}
     {% endif %}

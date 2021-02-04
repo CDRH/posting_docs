@@ -17,6 +17,12 @@
 /* instruction pages */
 ///////////////////////
 
+.about_project span {
+  background-color: yellow;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
 .head-instruct ~ h3 {
   border-radius: 10px;
   padding: 5px 10px;
