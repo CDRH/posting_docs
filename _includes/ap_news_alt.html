@@ -1,0 +1,40 @@
+<h2>The admin site</h2>
+
+<p>Note, these instructions vary only slightly from development to production, so you will simply need to run them from each location in turn.</p>
+
+<p>The "In the News" section of the African Poetry site relies on a database curated through an "admin" interface, aka: <a href="{{ page.data }}">{{ page.data }}</a>.</p>
+
+<p>Changes made through the admin portal will not automatically be available to the frontend website so as to allow the researchers to work without immediately making changes public. To publish, log into the server.</p>
+
+{% highlight bash %}
+cd /var/local/www/rails/african_poetics_admin
+
+# migrate the database just in case
+rails db:migrate
+{% endhighlight %}
+
+<p>If you have not done this for a while or are setting this up on a new machine, check the configuration file at lib/tasks/config.sh or create it and fill it out with:</p>
+
+{% highlight bash %}
+DB_FROM="admin_db_name"
+DB_TO="frontend_db_name"
+USER="user_for_both"
+PSWD="user_password"
+{% endhighlight %}
+
+<p>If everything looks good, go ahead and publish it!</p>
+
+{% highlight bash %}
+rails african_poetics:publish
+{% endhighlight %}
+
+<p>The publish command above should not only dump the admin db and load it into the frontend db, but will also iterate through the database records and populate Elasticsearch / API with the information.</p>
+
+<p>To run either the database dump / load or the API population separately, use these commands:</p>
+
+{% highlight bash %}
+rails african_poetics:publish_db
+rails african_poetics:publish_es
+{% endhighlight %}
+
+<p>You may find more information about available rake tasks at <a href="https://github.com/CDRH/african_poetics_admin">https://github.com/CDRH/african_poetics_admin</a>.</p>

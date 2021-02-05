@@ -12,11 +12,11 @@ layout: home
 <h3>African Poetics</h3>
 
 <div class="projects">
-  <a href="{{ 'projects/ap_cap' | relative_url }}">
-    Contemporary African Poets (yes docs)
-  </a>
+  <span>
+    Contemporary African Poets
+  </span>
   <a href="{{ 'projects/ap_news' | relative_url }}">
-    African Poetics in the News (no docs)
+    African Poetics in the News
   </a>
 </div>
 

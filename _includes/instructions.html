@@ -1,49 +1,60 @@
-<h2>Jump to section</h2>
-<div class="toc">
-  {% include toc.html %}
-</div>
+{% comment %}
+  A few projects have such wildly different instructions that it is better to skip everything else entirely. In that case, set alt_docs to a filepath for inclusion to display instead of all of the beautiful and thorough documention :'(
+{% endcomment %}
 
-<!-- =========== -->
-<!-- DEVELOPMENT -->
-<!-- =========== -->
+{% if page.alt_docs %}
 
-<h2 id="development" class="head-instruct head-instruct-dev">Update Development</h2>
+  {% include {{ page.alt_docs}} %}
 
-<div class="instruct instruct-dev">
-  <h3 id="dev_login" class="non-dev">Log in and pull to development</h3>
-  {% include git_pull.html environment="development" %}
+{% else %}
 
-  <h3 id="dev_update">Update the development site</h3>
-  {% include update.html environment="development" %}
+  <h2>Jump to section</h2>
+  <div class="toc">
+    {% include toc.html %}
+  </div>
 
-  <h3 id="dev_check">Check the site</h3>
-  {% include check_site.html environment="development" %}
+  <!-- =========== -->
+  <!-- DEVELOPMENT -->
+  <!-- =========== -->
 
-  <h3 id="dev_push" class="non-dev">Push changes (if needed)</h3>
-  {% include git_push.html environment="development" %}
-</div>
-<!-- ========== -->
-<!-- PRODUCTION -->
-<!-- ========== -->
+  <h2 id="development" class="head-instruct head-instruct-dev">Update Development</h2>
 
-<h2 id="production" class="head-instruct head-instruct-prod">Update Production</h2>
+  <div class="instruct instruct-dev">
+    <h3 id="dev_login" class="non-dev">Log in and pull to development</h3>
+    {% include git_pull.html environment="development" %}
 
-<div class="instruct instruct-prod">
-  <h3 id="prod_login" class="non-dev">Log in and pull to production</h3>
-  {% include git_pull.html environment="production" %}
+    <h3 id="dev_update">Update the development site</h3>
+    {% include update.html environment="development" %}
 
-  <h3 id="prod_update">Update the production site</h3>
-  {% include update.html environment="production" %}
+    <h3 id="dev_check">Check the site</h3>
+    {% include check_site.html environment="development" %}
 
-  <h3 id="prod_check">Check the site</h3>
-  {% include check_site.html environment="production" %}
+    <h3 id="dev_push" class="non-dev">Push changes (if needed)</h3>
+    {% include git_push.html environment="development" %}
+  </div>
+  <!-- ========== -->
+  <!-- PRODUCTION -->
+  <!-- ========== -->
 
-  <h3 id="prod_push" class="non-dev">Push changes (if needed)</h3>
-  {% include git_push.html environment="production" %}
-</div>
-<!-- TODO add override for custom info for projects since multiple will need this -->
+  <h2 id="production" class="head-instruct head-instruct-prod">Update Production</h2>
 
-<h2>More Information</h2>
-<div class="more_info">
-  {% include more_info.html %}
-</div>
+  <div class="instruct instruct-prod">
+    <h3 id="prod_login" class="non-dev">Log in and pull to production</h3>
+    {% include git_pull.html environment="production" %}
+
+    <h3 id="prod_update">Update the production site</h3>
+    {% include update.html environment="production" %}
+
+    <h3 id="prod_check">Check the site</h3>
+    {% include check_site.html environment="production" %}
+
+    <h3 id="prod_push" class="non-dev">Push changes (if needed)</h3>
+    {% include git_push.html environment="production" %}
+  </div>
+  <!-- TODO add override for custom info for projects since multiple will need this -->
+
+  <h2>More Information</h2>
+  <div class="more_info">
+    {% include more_info.html %}
+  </div>
+{% endif %}

@@ -27,3 +27,5 @@ webs: false
 # html_extra: false
 
 ---
+
+<p>These are instructions for the in-progress Rails website which will replace the Cocoon implementation of the Cody Archive.</p>
