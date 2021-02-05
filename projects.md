@@ -12,29 +12,81 @@ layout: home
 <h3>African Poetics</h3>
 
 <div class="projects">
-  <a href="{{ 'projects/ap_cap' | relative_url }}" class="project">Contemporary African Poets (yes docs)</a>
-  <a href="{{ 'projects/ap_news' | relative_url }}" class="project">African Poetics in the News (no docs)</a>
+  <a href="{{ 'projects/ap_cap' | relative_url }}">
+    Contemporary African Poets (yes docs)
+  </a>
+  <a href="{{ 'projects/ap_news' | relative_url }}">
+    African Poetics in the News (no docs)
+  </a>
 </div>
 
-<h3>Uncategorized</h3>
+<h3>A - C</h3>
 
 <div class="projects">
-  <a href="{{ 'projects/cody_old' | relative_url }}" class="project">Cody (Old Site)</a>
-  <a href="{{ 'projects/cody' | relative_url }}" class="project">Cody (Future Site)</a>
+  <span>Ardhi</span>
+  <span>Austen Said</span>
+  <span>Band History</span>
+  <span>Casting Nets</span>
+  <span>Charles Chesnutt</span>
+  <span>Child Literature</span>
+  <span>Civil War DC</span>
+  <a href="{{ 'projects/cody_old' | relative_url }}">
+    Cody (Old Site)
+  </a>
+  <a href="{{ 'projects/cody' | relative_url }}">
+    Cody (Future Site)
+  </a>
 </div>
 
-<h3>Whitman</h3>
-
-<h4>Current (legacy) website</h4>
+<h3>Cather</h3>
 <div class="projects">
-  <span class="project">Journalism</span>
-  <span class="project">Marginalia</span>
-  <span class="project">Multimedia</span>
+  <span>Calendar of Letters (Old)</span>
+  <span>Letters</span>
+  <span>Everything else</span>
 </div>
 
-<h4>FUTURE website</h4>
+<h3>D - L</h3>
 <div class="projects">
-  <span class="project">Journalism</span>
-  <span class="project">Marginalia</span>
-  <span class="project">Multimedia</span>
+  <span>DH2013</span>
+  <span>Early Treaties</span>
+  <span>Encyclopedia of the Great Plains</span>
+  <span>Every Week Magazine</span>
+  <span>Family Letters</span>
+  <span>Habeas Corpus</span>
+  <span>Lewis and Clark</span>
+</div>
+
+<h3>M - N</h3>
+<div class="projects">
+  <span>Mountain Meadows Massacre</span>
+  <span>NCS Liberty</span>
+  <span>NCS Love and Seduction</span>
+  <span>Nebraskaland</span>
+  <span>Nebraska Public Documents</span>
+  <span>NE Stories of Humanity</span>
+  <span>Neihardt</span>
+</div>
+
+<h3>O - T</h3>
+<div class="projects">
+  <span>OSCYS</span>
+  <span>Prairie Forestry</span>
+  <span>Quills & Feathers</span>
+  <span>TEAA</span>
+  <span>Trans-Mississippi</span>
+</div>
+
+<h3>Whitman Cocoon (current)</h3>
+
+<div class="projects">
+  <span>Journalism</span>
+  <span>Marginalia</span>
+  <span>Multimedia</span>
+</div>
+
+<h3>Whitman Rails (in progress)</h3>
+<div class="projects">
+  <span>Journalism</span>
+  <span>Marginalia</span>
+  <span>Multimedia</span>
 </div>
