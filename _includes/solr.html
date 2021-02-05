@@ -1,0 +1,50 @@
+{% if page.html %}
+
+  <h4>Step 0. Generate HTML</h4>
+
+  <p>Yes, step 0, because most sites with Solr don't use pre-generated HTML so consider your site special enough to have its own unique step!</p>
+
+  <p>Let's generate the new pages for your site before we update the search, and that way they will already be in place and ready to be discovered.</p>
+
+{% highlight bash %}
+post -e {{ include.environment }}
+{% endhighlight %}
+
+  <p>If you are only adding a few new files, you may want to regenerate only those which were updated when you did the git pull earlier:</p>
+
+{% highlight bash %}
+post -e {{ include.environment }} -u today
+{% endhighlight %}
+
+  <p>This script may take some time to run. [More info: <a href="#more_html_error">troubleshoot if there are errors with the HTML generation</a>.]
+
+{% endif %}
+
+<h4>Step 1. Clear Solr (optional)</h4>
+
+<p>If you have removed any files or changed identifiers, you will need to clear the old, no longer used file from the Solr index. If not, skip to Step 2.</p>
+
+<p>You may either clear either one specific file or <strong>ALL</strong> the files. Keep in mind that if you clear all the files, the site will have no content until you repopulate the search.</p>
+
+{% highlight bash %}
+# clear one file from the index with -r [id]
+#   (do not include extension)
+solr_clear_index -e {{ include.environment }} -r 0001
+
+# clear ALL files
+solr_clear_index -e {{ include.environment }}
+{% endhighlight %}
+
+<p>[More info: <a href="#more_clear_solr">other options for clearing Solr by subcategory, etc</a>]</p>
+
+<p>TODO WHITMAN SECTIONS OR ELSSSSSE</p>
+
+<h4>Step 2. Populate the search!</h4>
+
+<p>This is the part where you get to add your new and updated files into your site's search!</p>
+
+{% highlight bash %}
+post -e {{ include.environment }} -x solr
+{% endhighlight %}
+
+<p>This may take some time to run, so if you are impatient, you may want to consider only posting specific files unless if you cleared the entire index in the last step. [More info: <a href="#more_solr_post">learn about posting by file type, date, and file name</a>.]</p>

@@ -24,11 +24,19 @@
 /* instruction pages */
 ///////////////////////
 
+.about {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 20px 10px 0 10px
+}
+
 .about_project {
   margin-bottom: 20px;
 }
 
 .about_project .tech {
+  width: 50%;
+  margin: 0 auto;
   margin-bottom: 20px;
 
   span {
@@ -47,16 +55,27 @@
   }
 }
 
-.head-instruct ~ h3 {
+.instruct h3 {
   border-radius: 10px;
   padding: 5px 10px;
 }
 
-.head-instruct-dev ~ h3 {
-  background-color: aquamarine;
+.instruct {
+  border-left: 5px solid;
+  padding-left: 10px;
 }
-.head-instruct-prod ~ h3 {
-  background-color: orange;
+
+.instruct-dev {
+  border-color: aquamarine;
+  h3 {
+    background-color: aquamarine;
+  }
+}
+.instruct-prod {
+  border-color: orange;
+  h3 {
+    background-color: orange;
+  }
 }
 
 h4 {

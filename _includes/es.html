@@ -1,0 +1,54 @@
+{% comment %}
+  These docs assume that all elasticsearch sites will have some HTML generation, and if that is not the case then the repo itself should have an override so that no behavior occurs when -x html is run.
+{% endcomment %}
+
+<h4>Step 1. Generate HTML</h4>
+
+<p>Let's generate the new pages for your site before we update the search, and that way they will already be in place and ready to be discovered!</p>
+
+{% highlight bash %}
+post -e {{ include.environment }}
+{% endhighlight %}
+
+<p>If you are only adding a few new files, you may want to regenerate only those which were updated when you did the git pull earlier:</p>
+
+{% highlight bash %}
+post -e {{ include.environment }} -u today
+{% endhighlight %}
+
+<p>If your data includes TEI-XML files, this script will probably take a while to run since it will be transforming the files with XSLT. Other formats, like CSV, should be real snappy, though! [More info: <a href="#more_html_error">troubleshoot if there are errors with the HTML generation</a>.]
+
+{% if page.html_extra %}
+  {% include {{ page.html_extra }} environment=include.environment %}
+{% endif %}
+
+<h4>Step 2. Clear search (optional)</h4>
+
+<p>If you have removed any files or changed identifiers, you will need to clear the old, no longer used file from the Elasticsearch index. If not, skip to Step 3.</p>
+
+<p>You may either clear either one specific file or <strong>ALL</strong> the files. Keep in mind that if you clear all the files, the site will have no content until you repopulate the search. <strong>This may be a problem if you are a site like Whitman or Cather TODO</strong>.</p>
+
+{% highlight bash %}
+# clear one file from the index with -r [id]
+#   (do not include extension)
+es_clear_index -e {{ include.environment }} -r 0001
+
+# clear ALL files
+es_clear_index -e {{ include.environment }}
+{% endhighlight %}
+
+<p>[More info: <a href="#more_clear_es">other options for clearing Elasticsearch by subcategory, etc</a>]</p>
+
+<h4>Step 4. Populate the search!</h4>
+
+<!-- TODO this is where we need to add notes about like, api_location, iiif, etc -->
+
+<!-- TODO if include file -->
+
+<p>It's pretty straightforward to get the rest of your files into Elasticsearch, fortunately!</p>
+
+{% highlight bash %}
+post -e {{ include.environment }}
+{% endhighlight %}
+
+<p>Keep an eye out for errors as it zips through your files. [More info: <a href="#more_es_error">troubleshooting if there is a problem</a>.]</p>

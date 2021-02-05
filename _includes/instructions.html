@@ -7,36 +7,40 @@
 <!-- DEVELOPMENT -->
 <!-- =========== -->
 
-<h2 class="head-instruct head-instruct-dev">Update Development</h2>
+<h2 id="development" class="head-instruct head-instruct-dev">Update Development</h2>
 
-<h3 id="dev_login">Log in and pull to development</h3>
-{% include git_pull.html environment="development" %}
+<div class="instruct instruct-dev">
+  <h3 id="dev_login" class="non-dev">Log in and pull to development</h3>
+  {% include git_pull.html environment="development" %}
 
-<h3 id="dev_update">Update the development site</h3>
+  <h3 id="dev_update">Update the development site</h3>
+  {% include update.html environment="development" %}
 
-<h3 id="dev_check">Check the site</h3>
-{% include check_site.html environment="development" %}
+  <h3 id="dev_check">Check the site</h3>
+  {% include check_site.html environment="development" %}
 
-<h3 id="dev_push">Push changes (if needed)</h3>
-{% include git_push.html environment="development" %}
-
+  <h3 id="dev_push" class="non-dev">Push changes (if needed)</h3>
+  {% include git_push.html environment="development" %}
+</div>
 <!-- ========== -->
 <!-- PRODUCTION -->
 <!-- ========== -->
 
-<h2 class="head-instruct head-instruct-prod">Update Production</h2>
+<h2 id="production" class="head-instruct head-instruct-prod">Update Production</h2>
 
-<h3 id="prod_login">Log in and pull to production</h3>
-{% include git_pull.html environment="production" %}
+<div class="instruct instruct-prod">
+  <h3 id="prod_login" class="non-dev">Log in and pull to production</h3>
+  {% include git_pull.html environment="production" %}
 
-<h3 id="prod_update">Update the production site</h3>
+  <h3 id="prod_update">Update the production site</h3>
+  {% include update.html environment="production" %}
 
-<h3 id="prod_check">Check the site</h3>
-{% include check_site.html environment="production" %}
+  <h3 id="prod_check">Check the site</h3>
+  {% include check_site.html environment="production" %}
 
-<h3 id="prod_push">Push changes (if needed)</h3>
-{% include git_push.html environment="production" %}
-
+  <h3 id="prod_push" class="non-dev">Push changes (if needed)</h3>
+  {% include git_push.html environment="production" %}
+</div>
 <!-- TODO add override for custom info for projects since multiple will need this -->
 
 <h2>More Information</h2>

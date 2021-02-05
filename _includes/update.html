@@ -1,0 +1,7 @@
+{% if page.search == "solr" %}
+  {% include solr.html environment=include.environment %}
+{% elsif page.search == "es" %}
+  {% include es.html environment=include.environment %}
+{% else %}
+  <p>Your site appears not to have any attached search! Does that seem right to you?</p>
+{% endif %}
