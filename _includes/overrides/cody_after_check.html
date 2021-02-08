@@ -1,0 +1,16 @@
+<p>If you have altered any of the personography or place entries, you will also need to break an additional file:</p>
+
+{% highlight bash %}
+cd /var/local/www/cocoon/[cody path]
+
+mv stylesheets/xslt/solr2json-facets.xsl stylesheets/xslt/solr2json-facets.tmp.xsl
+{% endhighlight %}
+
+<p>Now, go to TODO BASED ON ENVIRONMENT / <a href="https://codyarchive.org/js/solr/people.json">https://codyarchive.org/js/solr/people.json</a> and hard refresh the page. It should be broken! That's a good thing. Now let's unbreak it.</p>
+
+{% highlight bash %}
+mv stylesheets/xslt/solr2json-facets.tmp.xsl stylesheets/xslt/solr2json-facets.xsl
+
+# mv back to the data repo
+cd /var/local/www/data/collections/{{ page.data_dir }}
+{% endhighlight %}

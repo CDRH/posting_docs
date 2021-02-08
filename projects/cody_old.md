@@ -2,14 +2,15 @@
 title: Old Cody Archive
 layout: page
 
-shortname: cody_archive
-
 # locations
-# data_dir
-# iiif_path:
+data_server_dev: cdrhdev1.unl.edu
+data_server_prod: cors1601.unl.edu
+media_server: cors1601.unl.edu
+data_dir: cody_archive
+media_dir: cody_archive
 
 # settings
-# include_list
+# include_list:
 
 # reference urls
 data: "https://github.com/CDRH/data_cody"
@@ -23,9 +24,8 @@ search: solr
 html: false
 webs: false
 
-# funny business (most will be false)
-# html_extra: false
-
+# Overrides and Custom
+after_check: overrides/cody_after_check.html
 ---
 
 <p>This is the Cocoon implementation of the Cody Archive, which powers the current production website. In the near future it will be replaced by a Rails application.</p>

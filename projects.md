@@ -5,16 +5,16 @@ layout: home
 
 <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}"/>
 
-<p>Welcome to the posting instructions for the CDRH. TODO learn more about how the publishing system is set up.</p>
+<p>Welcome to the posting instructions for CDRH projects.</p>
 
 <h2>Projects</h2>
 
 <h3>African Poetics</h3>
 
 <div class="projects">
-  <span>
+  <a href="{{ 'projects/ap_cap' | relative_url }}">
     Contemporary African Poets
-  </span>
+  </a>
   <a href="{{ 'projects/ap_news' | relative_url }}">
     African Poetics in the News
   </a>

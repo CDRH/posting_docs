@@ -2,11 +2,12 @@
 title: Cody Archive
 layout: page
 
-shortname: cody_archive
-
 # locations
-# data_dir
-# iiif_path:
+data_server_dev: cdrhdev1.unl.edu
+data_server_prod: cors1601.unl.edu
+media_server: cors1601.unl.edu
+data_dir: cody_archive
+media_dir: cody_archive
 
 # settings
 # include_list
@@ -22,10 +23,6 @@ app: orchid
 search: es
 html: true
 webs: false
-
-# funny business (most will be false)
-# html_extra: false
-
 ---
 
 <p>These are instructions for the in-progress Rails website which will replace the Cocoon implementation of the Cody Archive.</p>
