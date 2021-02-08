@@ -1,0 +1,11 @@
+<h4>Step 3: Update the relationships</h4>
+
+<p>If you have not updated the `rdf/oscys.relationships.csv`, you may skip this step. However, if you have downloaded a new copy of the Google Sheets document with person relationships, then add it as `rdf/oscys.relationships.csv`. If you do this locally and push, you can use `git pull` to move the new copy to the server.</p>
+
+<p>From the root directory of the data repo, run the following command:</p>
+
+{% highlight bash %}
+ruby scripts/csv_to_rdf.rb
+{% endhighlight %}
+
+<p>This may take some time to run. Once it is done, it will have updated the file `rdf/oscys.relationships.ttl`. In a few steps when you are adding things to Git, you will want to make sure that you also add this file if you are happy with how everything looks.</p>
