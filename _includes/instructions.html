@@ -1,5 +1,7 @@
 {% comment %}
   A few projects have such wildly different instructions that it is better to skip everything else entirely. In that case, set alt_docs to a filepath for inclusion to display instead of all of the beautiful and thorough documention :'(
+
+  See the README for more information about adding to or overriding other portions of this documentation.
 {% endcomment %}
 
 {% if page.alt_docs %}
@@ -8,11 +10,6 @@
 
 {% else %}
 
-  <h2>Jump to section</h2>
-  <div class="toc">
-    {% include toc.html %}
-  </div>
-
   <!-- =========== -->
   <!-- DEVELOPMENT -->
   <!-- =========== -->
@@ -20,18 +17,56 @@
   <h2 id="development" class="head-instruct head-instruct-dev">Update Development</h2>
 
   <div class="instruct instruct-dev">
-    <h3 id="dev_login" class="non-dev">Log in and pull to development</h3>
-    {% include git_pull.html environment="development" %}
 
-    <h3 id="dev_update">Update the development site</h3>
-    {% include update.html environment="development" %}
+    <!-- PART 1: LOG IN -->
+    {% if page.alt_login %}
+      {% include {{ page.alt_login }} environment="development" %}
+    {% else %}
+      <h3 id="dev_login" class="non-dev">Log in and pull to development</h3>
+      {% include git_pull.html environment="development" %}
 
-    <h3 id="dev_check">Check the site</h3>
-    {% include check_site.html environment="development" %}
+      {% if page.after_login %}
+        {% include {{ page.after_login }} environment="development" %}
+      {% endif %}
+    {% endif %}
 
-    <h3 id="dev_push" class="non-dev">Push changes (if needed)</h3>
-    {% include git_push.html environment="development" %}
+    <!-- PART 2: UPDATE -->
+    {% if page.alt_update %}
+      {% include {{ page.alt_update }} environment="development" %}
+    {% else %}
+      <h3 id="dev_update">Update the development site</h3>
+      {% include update.html environment="development" %}
+
+      {% if page.after_update %}
+        {% include {{ page.after_update }} environment="development" %}
+      {% endif %}
+    {% endif %}
+
+    <!-- PART 3: CHECK -->
+    {% if page.alt_check %}
+      {% include {{ page.alt_check }} environment="development" %}
+    {% else %}
+      <h3 id="dev_check">Check the site</h3>
+      {% include check_site.html environment="development" %}
+
+      {% if page.after_check %}
+        {% include {{ page.after_check }} environment="development" %}
+      {% endif %}
+    {% endif %}
+
+    <!-- PART 4: PUSH CHANGES -->
+    {% if page.alt_push %}
+      {% include {{ page.alt_push }} environment="development" %}
+    {% else %}
+      <h3 id="dev_push" class="non-dev">Push changes (if needed)</h3>
+      {% include git_push.html environment="development" %}
+
+      {% if page.after_push %}
+        {% include {{ page.after_push }} environment="development" %}
+      {% endif %}
+    {% endif %}
   </div>
+
   <!-- ========== -->
   <!-- PRODUCTION -->
   <!-- ========== -->
@@ -39,19 +74,54 @@
   <h2 id="production" class="head-instruct head-instruct-prod">Update Production</h2>
 
   <div class="instruct instruct-prod">
-    <h3 id="prod_login" class="non-dev">Log in and pull to production</h3>
-    {% include git_pull.html environment="production" %}
+    <!-- PART 1: LOG IN -->
+    {% if page.alt_login %}
+      {% include {{ page.alt_login }} environment="production" %}
+    {% else %}
+      <h3 id="prod_login" class="non-prod">Log in and pull to production</h3>
+      {% include git_pull.html environment="production" %}
 
-    <h3 id="prod_update">Update the production site</h3>
-    {% include update.html environment="production" %}
+      {% if page.after_login %}
+        {% include {{ page.after_login }} environment="production" %}
+      {% endif %}
+    {% endif %}
 
-    <h3 id="prod_check">Check the site</h3>
-    {% include check_site.html environment="production" %}
+    <!-- PART 2: UPDATE -->
+    {% if page.alt_update %}
+      {% include {{ page.alt_update }} environment="production" %}
+    {% else %}
+      <h3 id="prod_update">Update the production site</h3>
+      {% include update.html environment="production" %}
 
-    <h3 id="prod_push" class="non-dev">Push changes (if needed)</h3>
-    {% include git_push.html environment="production" %}
+      {% if page.after_update %}
+        {% include {{ page.after_update }} environment="production" %}
+      {% endif %}
+    {% endif %}
+
+    <!-- PART 3: CHECK -->
+    {% if page.alt_check %}
+      {% include {{ page.alt_check }} environment="production" %}
+    {% else %}
+      <h3 id="prod_check">Check the site</h3>
+      {% include check_site.html environment="production" %}
+
+      {% if page.after_check %}
+        {% include {{ page.after_check }} environment="production" %}
+      {% endif %}
+    {% endif %}
+
+    <!-- PART 4: PUSH CHANGES -->
+    {% if page.alt_push %}
+      {% include {{ page.alt_push }} environment="production" %}
+    {% else %}
+      <h3 id="prod_push" class="non-prod">Push changes (if needed)</h3>
+      {% include git_push.html environment="production" %}
+
+      {% if page.after_push %}
+        {% include {{ page.after_push }} environment="production" %}
+      {% endif %}
+    {% endif %}
   </div>
-  <!-- TODO add override for custom info for projects since multiple will need this -->
 
   <h2>More Information</h2>
   <div class="more_info">

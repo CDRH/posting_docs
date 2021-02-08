@@ -15,20 +15,22 @@
 
   <p>This sounds scary but I promise you that it almost always, usually, well, probably is not. We need to break the site so that Cocoon will refresh its contents. We do this by introducing an intentional error in some XSLT.</p>
 
-  {% highlight bash %}
-  cd /var/local/www/cocoon/TODO
-  TODO
-  mv ../../../cocoon/[TODO]/stylesheets/xslt/tei.p5.xsl ../../../cocoon/[TODO]/stylesheets/xslt/tei.p5.tmp.xsl
-  {% endhighlight %}
+{% highlight bash %}
+cd /var/local/www/cocoon/[ your_project_dir ]
 
-  <p>Now, go to TODO BASED ON ENVIRONMENT and hard refresh the page. It should be broken!  That's a good thing. Now let's unbreak it.</p>
+mv stylesheets/xslt/tei.p5.xsl stylesheets/xslt/tei.p5.tmp.xsl
+{% endhighlight %}
 
-  {% highlight bash %}
-  TODO
-  mv ../../../cocoon/[TODO path]/stylesheets/xslt/tei.p5.tmp.xsl ../../../cocoon/[TODO path]/stylesheets/xslt/tei.p5.xsl
-  {% endhighlight %}
+  <p>Now, go to <a href="{{ url }}">{{ url }}</a> and hard refresh the page. It should be broken!  That's a good thing. Now let's unbreak it.</p>
 
-  <p>Go back to TODO and refresh again. Hopefully it is unbroken and your changes are now available! [More info: <a href="#more_cocoon_broken">what if it's still broken?</a>]</p>
+{% highlight bash %}
+mv stylesheets/xslt/tei.p5.tmp.xsl stylesheets/xslt/tei.p5.xsl
+
+# move back to the data directory
+cd /var/local/www/data/collections/{{ data_dir }}
+{% endhighlight %}
+
+  <p>Go back to <a href="{{ url }}">{{ url }}</a> and refresh again. Hopefully it is unbroken and your changes are now available! [More info: <a href="#more_cocoon_broken">what if it's still broken?</a>]</p>
 
 {% else %}
 

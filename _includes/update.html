@@ -1,3 +1,15 @@
+{% if page.include_list %}
+  <h4>Hold up! Check your {{ page.include_list }}</h4>
+
+  <p>Before you run anything, check that any files you are adding today have already been placed in the file config/{{ page.include_list }}.</p>
+
+  {% if include.environment == "development" %}
+    <p>Depending on how the data repo is set up, this step may not be necessary for development.</p>
+  {% endif %}
+
+  <p>Follow the examples of other documents already listed in that file and add the new items to the bottom and save!</p>
+{% endif %}
+
 {% if page.search == "solr" %}
   {% include solr.html environment=include.environment %}
 {% elsif page.search == "es" %}

@@ -39,11 +39,7 @@ es_clear_index -e {{ include.environment }}
 
 <p>[More info: <a href="#more_clear_es">other options for clearing Elasticsearch by subcategory, etc</a>]</p>
 
-<h4>Step 4. Populate the search!</h4>
-
-<!-- TODO this is where we need to add notes about like, api_location, iiif, etc -->
-
-<!-- TODO if include file -->
+<h4>Step 3. Populate the search!</h4>
 
 <p>It's pretty straightforward to get the rest of your files into Elasticsearch, fortunately!</p>
 
@@ -52,3 +48,7 @@ post -e {{ include.environment }}
 {% endhighlight %}
 
 <p>Keep an eye out for errors as it zips through your files. [More info: <a href="#more_es_error">troubleshooting if there is a problem</a>.]</p>
+
+{% if page.webs %}
+<p><strong>NOTE: Your project uses a process called webscraping for at least some of your search results.</strong> This means that a script goes to pages of your website and grabs the text to use in search results. You may wish to check in `config/public.yml` and possibly `config/private.yml` to make sure that webscraping is enabled, or else these pages will not be updated.</p>
+{% endif %}

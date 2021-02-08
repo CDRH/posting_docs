@@ -1,15 +1,17 @@
-{% comment %}
-  Requires "environment" variable
-{% endcomment %}
-
 <h4>Step 1: Log in</h4>
 
 <p>SSH into the {{ include.environment }} server and navigate to the data repository. [More info: <a href="#more_ssh">if this is your first time logging in, you will need to set up server access</a>.]</p>
 
 {% highlight bash %}
-ssh username@dev-server.unl.edu
+
+{% if include.environment == "development" %}
+ssh username@{{ page.data_server_dev }}
+{% else %}
+ssh username@{{ page.data_server_prod }}
+{% endif %}
 
 cd /var/local/www/data/collections/{{ page.data_dir }}
+
 {% endhighlight %}
 
 <h4>Step 2: Check for changes</h4>
@@ -26,12 +28,30 @@ git status
 
 <h4>Step 3: Pull!</h4>
 
-<p>Once you are on the correct branch, there are no outstanding changes, and everything is copacetic, then you can pull updates. </p>
+<p>Once you are on the correct branch, there are no outstanding changes, and everything is copacetic, then you can pull updates.</p>
 
 {% highlight bash %}
 git pull origin [current branch name]
 {% endhighlight %}
 
 <p>You should either get a message saying "Already up to date" or you should see a bunch of new files show up with no errors. [More info: <a href="#more_git_problems">What if there is a problem when I git pull?</a>]</p>
+
+{% if page.media_dir %}
+  <h4>Step 4: Upload images and other media</h4>
+
+  {% if include.environment == "production" %}
+    <p>This section is repeated for the sake of being thorough, but if you already have added your media files either during the development step or previously, you may skip this!</p>
+  {% endif %}
+
+  <p>If your project uses images, audio, or video, you will need to upload any files that are connected with your new documents! TODO figure out some instructions knowing that most people use SFTP clients and that this isn't always on the same server oh no.</p>
+
+  <p>You will need to put your files in the following location on {{ page.media_server }}:</p>
+
+{% highlight bash %}
+/var/local/www/media/{{ page.media_dir }}/[relevant directory]
+{% endhighlight %}
+
+  <p>If you REPLACE any images and you do not see the new version show up on your site, this is because the IIIF image server caches images and you will need to either wait (a few days) or ask a CDRH dev to purge the cache.</p>
+{% endif %}
 
 <p>Now you should be ready to begin updating the {{ include.environment }} website's contents!</p>
