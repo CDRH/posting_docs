@@ -1,0 +1,9 @@
+<h4>Step 4: Update the map</h4>
+
+<p>You will need to run one final thing to update the GeoJSON which is powering your map.</p>
+
+{% highlight bash %}
+post -f api_location -x html
+{% endhighlight %}
+
+<p>This will recreate source/api_location/spatial.json and use it to create a file a GeoJSON file in the output directory.</p>

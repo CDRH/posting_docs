@@ -2,6 +2,7 @@ Add new projects to the `projects` directory with the following front matter:
 
 
 ```yaml
+---
 title: Cody Archive
 layout: page
 
@@ -12,9 +13,6 @@ media_server: cors1601.unl.edu
 data_dir: cody_archive
 media_dir: cody_archive
 
-# settings
-# include_list: production_files.txt
-
 # reference urls
 data: "https://github.com/CDRH/data_cody"
 code: "https://github.com/CDRH/cocoon_cody"
@@ -22,13 +20,17 @@ url_dev: "https://cdrhdev1.unl.edu/cocoon/codyarchive.org/"
 url_prod: "https://codyarchive.org"
 
 # website tech
-app: cocoon     # cocoon or orchid
-search: solr    # solr or es
-html: false     # true or flase
-webs: false     # webscraping, true or false
+app: orchid
+search: es
+html: true
+webs: false
 
-# Overrides and Custom
+# individual project settings
+# include_list: production_files.txt
+
+# overrides and custom
 after_check: overrides/cody_after_check.html
+---
 ```
 
 ## Override or Append to Sections

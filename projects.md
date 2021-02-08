@@ -51,7 +51,7 @@ layout: home
   <span>Early Treaties</span>
   <span>Encyclopedia of the Great Plains</span>
   <span>Every Week Magazine</span>
-  <span>Family Letters</span>
+  <a href="{{ 'projects/family_letters' | relative_url }}">Family Letters</a>
   <span>Habeas Corpus</span>
   <span>Lewis and Clark</span>
 </div>
