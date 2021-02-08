@@ -69,7 +69,7 @@ layout: home
 
 <h3>O - T</h3>
 <div class="projects">
-  <span>OSCYS</span>
+  <a href="{{ 'projects/oscys' | relative_url }}">OSCYS</a>
   <span>Prairie Forestry</span>
   <span>Quills & Feathers</span>
   <span>TEAA</span>
