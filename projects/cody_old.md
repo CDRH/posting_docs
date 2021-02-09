@@ -9,9 +9,6 @@ media_server: cors1601.unl.edu
 data_dir: cody_archive
 media_dir: cody_archive
 
-# settings
-# include_list:
-
 # reference urls
 data: "https://github.com/CDRH/data_cody"
 code: "https://github.com/CDRH/cocoon_cody"

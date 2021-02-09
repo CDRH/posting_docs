@@ -26,15 +26,31 @@ post -e {{ include.environment }} -u today
 
 <p>If you have removed any files or changed identifiers, you will need to clear the old, no longer used file from the Elasticsearch index. If not, skip to Step 3.</p>
 
-<p>You may either clear either one specific file or <strong>ALL</strong> the files. Keep in mind that if you clear all the files, the site will have no content until you repopulate the search. <strong>This may be a problem if you are a site like Whitman or Cather TODO</strong>.</p>
+<p>You may either clear either one specific file or <strong>ALL</strong> the files. Keep in mind that if you clear all the files, the site will have no content until you repopulate the search.</p>
+
+{% if page.section_name %}
+  <p><strong>WARNING: The {{ page.title }} uses one search index for ALL of its many parts, so you must ALWAYS specify which section you are clearing to avoid clearing the entire site.</strong></p>
+{% endif %}
+
+{% comment %}
+  Sites with sections require you to pass -f and -r parameters, assigning below
+{% endcomment %}
+
+{% highlight bash %}
+{% if page.section_name %}
+es_clear_index -e {{ include.environment }} -f {{ page.section_type }} -r {{ page.section_name }}
+{% else %}
+es_clear_index -e {{ include.environment }}
+{% endif %}
+{% endhighlight %}
+
+<p>You can also clear a specific file if you only need to drop one item from the index, but know that if you use an id like `10` you may be clearing more items than you intend, so be specific if possible!</p>
 
 {% highlight bash %}
 # clear one file from the index with -r [id]
 #   (do not include extension)
-es_clear_index -e {{ include.environment }} -r 0001
-
-# clear ALL files
-es_clear_index -e {{ include.environment }}
+#   (be specific with id to avoid accidentally removing more files)
+es_clear_index -e {{ include.environment }} -r wwa\.0001
 {% endhighlight %}
 
 <p>[More info: <a href="#more_clear_es">other options for clearing Elasticsearch by subcategory, etc</a>]</p>

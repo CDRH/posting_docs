@@ -1,4 +1,4 @@
-{% if page.html %}
+ {% if page.html %}
 
   <h4>Step 0. Generate HTML</h4>
 
@@ -26,18 +26,32 @@ post -e {{ include.environment }} -u today
 
 <p>You may either clear either one specific file or <strong>ALL</strong> the files. Keep in mind that if you clear all the files, the site will have no content until you repopulate the search.</p>
 
+{% if page.section_name %}
+  <p><strong>WARNING: The {{ page.title }} uses one search index for ALL of its many parts, so you must ALWAYS specify which section you are clearing to avoid clearing the entire site.</strong></p>
+{% endif %}
+
+{% comment %}
+  Sites with sections require you to pass -f and -r parameters, assigning below
+{% endcomment %}
+
+{% highlight bash %}
+{% if page.section_name %}
+solr_clear_index -e {{ include.environment }} -f {{ page.section_type }} -r {{ page.section_name }}
+{% else %}
+solr_clear_index -e {{ include.environment }}
+{% endif %}
+{% endhighlight %}
+
+<p>You can also clear a specific file if you only need to drop one item from the index, but know that if you use an id like `10` you may be clearing more items than you intend, so be specific if possible!</p>
+
 {% highlight bash %}
 # clear one file from the index with -r [id]
 #   (do not include extension)
-solr_clear_index -e {{ include.environment }} -r 0001
-
-# clear ALL files
-solr_clear_index -e {{ include.environment }}
+#   (be specific with id to avoid accidentally removing more files)
+solr_clear_index -e {{ include.environment }} -r wwa\.0001
 {% endhighlight %}
 
 <p>[More info: <a href="#more_clear_solr">other options for clearing Solr by subcategory, etc</a>]</p>
-
-<p>TODO WHITMAN SECTIONS OR ELSSSSSE</p>
 
 <h4>Step 2. Populate the search!</h4>
 
