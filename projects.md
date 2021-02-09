@@ -79,6 +79,7 @@ layout: home
 <h3>Whitman Cocoon (current)</h3>
 
 <div class="projects">
+  <a href="{{ 'projects/wwa_variorum' | relative_url }}">LoG 1855 Variorum</a>
   <span>Journalism</span>
   <span>Marginalia</span>
   <span>Multimedia</span>
