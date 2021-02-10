@@ -29,7 +29,7 @@ post -e {{ include.environment }} -u today
 <p>You may either clear either one specific file or <strong>ALL</strong> the files. Keep in mind that if you clear all the files, the site will have no content until you repopulate the search.</p>
 
 {% if page.section_name %}
-  <p><strong>WARNING: The {{ page.title }} uses one search index for ALL of its many parts, so you must ALWAYS specify which section you are clearing to avoid clearing the entire site.</strong></p>
+  <p><strong>WARNING: This big project uses one search index for ALL of its many parts, so you must ALWAYS specify which section you are clearing to avoid clearing the entire site.</strong></p>
 {% endif %}
 
 {% comment %}
