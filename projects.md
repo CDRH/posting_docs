@@ -79,8 +79,15 @@ layout: home
 <h3>Whitman Cocoon (current)</h3>
 
 <div class="projects">
-  <a href="{{ 'projects/wwa_variorum' | relative_url }}">LoG 1855 Variorum</a>
+  <a href="{{ 'projects/wwa_correspondence' | relative_url }}">Correspondence</a>
+  <a href="{{ 'projects/wwa_manuscripts' | relative_url }}">Manuscripts</a>
   <a href="{{ 'projects/wwa_marginalia' | relative_url }}">Marginalia</a>
+  <a href="{{ 'projects/wwa_multimedia' | relative_url }}">Multimedia</a>
+  <a href="{{ 'projects/wwa_notebooks' | relative_url }}">Notebooks</a>
+  <a href="{{ 'projects/wwa_reviews' | relative_url }}">Reviews</a>
+  <a href="{{ 'projects/wwa_scribal' | relative_url }}">Scribal</a>
+  <a href="{{ 'projects/wwa_traubel' | relative_url }}">Traubel</a>
+  <a href="{{ 'projects/wwa_variorum' | relative_url }}">LoG 1855 Variorum</a>
 </div>
 
 <h3>Whitman Rails (in progress)</h3>
