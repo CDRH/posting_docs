@@ -80,9 +80,7 @@ layout: home
 
 <div class="projects">
   <a href="{{ 'projects/wwa_variorum' | relative_url }}">LoG 1855 Variorum</a>
-  <span>Journalism</span>
-  <span>Marginalia</span>
-  <span>Multimedia</span>
+  <a href="{{ 'projects/wwa_marginalia' | relative_url }}">Marginalia</a>
 </div>
 
 <h3>Whitman Rails (in progress)</h3>
