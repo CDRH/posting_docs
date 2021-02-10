@@ -1,5 +1,5 @@
 ---
-title: Cody Archive
+title: Current Whitman Marginalia
 layout: page
 
 # locations
