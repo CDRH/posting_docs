@@ -7,13 +7,13 @@
   <p>Let's generate the new pages for your site before we update the search, and that way they will already be in place and ready to be discovered.</p>
 
 {% highlight bash %}
-post -e {{ include.environment }}
+post -e {{ include.environment }} -x html
 {% endhighlight %}
 
   <p>If you are only adding a few new files, you may want to regenerate only those which were updated when you did the git pull earlier:</p>
 
 {% highlight bash %}
-post -e {{ include.environment }} -u today
+post -e {{ include.environment }} -x html -u today
 {% endhighlight %}
 
   <p>This script may take some time to run. [More info: <a href="#more_html_error">troubleshoot if there are errors with the HTML generation</a>.]
